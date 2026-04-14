@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from langchain_core.prompts import PromptTemplate
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_ollama import ChatOllama
+# from pydantic.v1.fields import FieldInfo as FieldInfo1
 
 load_dotenv()
 
@@ -22,9 +23,10 @@ def getOllamaLLM():
     return ChatOllama(
         # ollama with google gemma3:270m model
         model="gemma3:270m",
+        # model="gpt-oss:latest",
         # value 0 to 0.3 make response deterministic, factual, probably repeatable
         # 0.8 to 1 - get creative results
-        temperature=0,
+        temperature=1,
         max_tokens=None,
         timeout=None,
         max_retries=2,
