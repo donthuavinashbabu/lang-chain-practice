@@ -40,8 +40,14 @@ uv init
 
 **Explanation:** Creates a Python project in the current directory: `pyproject.toml`, starter layout, and (with default options) a `.gitignore` suited to Python so virtualenvs, caches, and common junk are not committed.
 
-### 5. Add runtime and dev dependencies
+**Explanation:** Adds **Black** (code formatter) and **isort** (import sorter) as project dependencies for consistent style.
 
+### 6. Python `.gitignore`
+
+**Explanation:** A Python-oriented `.gitignore` (for example the one created by `uv init`, or a standard template) keeps `.venv/`, `__pycache__/`, `.env`, build artifacts, and similar files out of Git. If your repo did not get one, add `.gitignore` before committing.
+
+---
+# LangChain dependencies
 ```bash
 uv add langchain
 ```
@@ -63,15 +69,6 @@ uv add python-dotenv
 ```bash
 uv add black isort
 ```
-
-**Explanation:** Adds **Black** (code formatter) and **isort** (import sorter) as project dependencies for consistent style.
-
-### 6. Python `.gitignore`
-
-**Explanation:** A Python-oriented `.gitignore` (for example the one created by `uv init`, or a standard template) keeps `.venv/`, `__pycache__/`, `.env`, build artifacts, and similar files out of Git. If your repo did not get one, add `.gitignore` before committing.
-
-### 7. More LangChain providers
-
 ```bash
 uv add langchain-google-genai
 ```
@@ -84,6 +81,17 @@ uv add langchain-ollama
 
 **Explanation:** Adds LangChain support for [Ollama](https://ollama.com/) so you can run local models.
 
+```bash
+uv add langchain-community
+```
+
+```bash
+uv add langchain-pinecone
+```
+
+```bash
+uv add langchainhub
+```
 ---
 
 ## Running the project
