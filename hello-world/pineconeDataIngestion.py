@@ -26,7 +26,7 @@ if __name__ == '__main__':
     document = loader.load()  # load to langchain document
 
     print("Splitting")
-    text_splitter =  CharacterTextSplitter(chunk_size=100, chunk_overlap=0)
+    text_splitter =  CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
     texts = text_splitter.split_documents(document)
     print(f"created {len(texts)} chunks")
 

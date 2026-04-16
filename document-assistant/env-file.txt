@@ -1,14 +1,13 @@
 # keys should be exactly same because LangChain looks for exact same keys
 
-# opne ai properties
 #OPENAI_API_KEY
 
-## Google Gemini properties
+## Google Gemini API Keys. Any below key works
 # GOOGLE_GEMINI_API_KEY=
 GOOGLE_API_KEY=
 # GEMINI_API_KEY=
 
-## LangSmith properties
+## LangSmith Keys
 LANGSMITH_TRACING=true
 LANGSMITH_ENDPOINT=
 LANGSMITH_API_KEY=
