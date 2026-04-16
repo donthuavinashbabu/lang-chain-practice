@@ -47,10 +47,10 @@ def generateFunnyFact(llm, information_key: str) -> str:
 
 def main():
     # use Google Gemini 2.5 Flash model
-    # llm = getGoogleGeminiLLM()
+    llm = getGoogleGeminiLLM()
 
     # use Ollama with Google Gemma 3:270m model
-    llm = getOllamaLLM()
+    # llm = getOllamaLLM()
 
     informationValue = "Google"
     fact = generateFunnyFact(llm, informationValue)
