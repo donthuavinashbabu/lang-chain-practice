@@ -26,13 +26,11 @@ if __name__ == '__main__':
     document = loader.load()  # load to langchain document
 
     print("Splitting")
-    text_splitter =  CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
-    texts = text_splitter.split_documents(document)
+    textSplitter =  CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
+    texts = textSplitter.split_documents(document)
     print(f"created {len(texts)} chunks")
 
     # openai_embeddings = OpenAIEmbeddings(openai_api_key=os.environ.get("OPENAI_API_KEY"))
-    # google_genai_embeddings = GoogleGenerativeAIEmbeddings(google_gemini_api_key=os.environ.get("GOOGLE_GEMINI_API_KEY"))
-    # ollama_embeddings = OllamaEmbeddings(model="nomic-embed-text")
     # models/embedding-001 or models/text-embedding-004
     google_genai_embeddings =GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key=os.environ.get("GOOGLE_API_KEY"))
     ollama_embeddings = OllamaEmbeddings(model="nomic-embed-text")

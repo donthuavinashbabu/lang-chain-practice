@@ -1,9 +1,13 @@
 # Document Assistant
-* Command to create project
+* [Ingestion](ingestion.py)
+
+---
+# Create project
+* Use below command
 ```
 uv init document-assistant
 ```
-* Dependencies
+* [Dependencies](pyproject.toml)
 ```
 uv add langchain
 uv add langchain-community

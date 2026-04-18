@@ -32,17 +32,17 @@ def getOllamaLLM():
         max_retries=2,
     )
 
-def generateFunnyFact(llm, information_key: str) -> str:
-    summaryTemplate = """
+def generateFunnyFact(llm, informationValue: str) -> str:
+    promptText = """
             Give me 1 funny fact about {informationKey}
         """
-    summaryPromptTemplate = PromptTemplate(
+    promptTemplate = PromptTemplate(
         input_variables=["informationKey"],
-        template=summaryTemplate
+        template=promptText
     )
     # LangChain Expression Language (LCEL)
-    chain = summaryPromptTemplate | llm
-    response = chain.invoke(input={"informationKey": information_key})
+    chain = promptTemplate | llm
+    response = chain.invoke(input={"informationKey": informationValue})
     return response.content
 
 def main():
@@ -52,7 +52,9 @@ def main():
     # use Ollama with Google Gemma 3:270m model
     # llm = getOllamaLLM()
 
-    informationValue = "Google"
+    # informationValue = "Google"
+    # informationValue = "Apple"
+    informationValue = "Meta"
     fact = generateFunnyFact(llm, informationValue)
     print(fact)
 
